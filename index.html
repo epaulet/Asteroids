@@ -26,6 +26,9 @@
         imageObjs.wormhole = document.createElement('img');
         imageObjs.wormhole.src = './images/wormhole.png';
 
+        imageObjs.asteroid = document.createElement('img');
+        imageObjs.asteroid.src = './images/asteroid.png';
+
         var ctx = document.getElementById('gameCanvas').getContext('2d');
         var game = new Asteroids.Game(imageObjs);
         var gameView = new Asteroids.GameView(game, ctx);
