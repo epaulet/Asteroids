@@ -18,8 +18,16 @@
       style="display:block;margin:0 auto;"></canvas>
     <script type="text/javascript">
       (function () {
+        imageObjs = {};
+
+        imageObjs.blackhole = document.createElement('img');
+        imageObjs.blackhole.src = './images/blackhole.png';
+
+        imageObjs.wormhole = document.createElement('img');
+        imageObjs.wormhole.src = './images/wormhole.png';
+
         var ctx = document.getElementById('gameCanvas').getContext('2d');
-        var game = new Asteroids.Game();
+        var game = new Asteroids.Game(imageObjs);
         var gameView = new Asteroids.GameView(game, ctx);
         gameView.start();
       })();
