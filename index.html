@@ -19,22 +19,25 @@
       style="display:block;margin:0 auto;"></canvas>
     <script type="text/javascript">
       (function () {
-        imageObjs = {};
+        images = {};
 
-        imageObjs.blackhole = document.createElement('img');
-        imageObjs.blackhole.src = './images/blackhole.png';
+        images.blackhole = document.createElement('img');
+        images.blackhole.src = './images/blackhole.png';
 
-        imageObjs.wormhole = document.createElement('img');
-        imageObjs.wormhole.src = './images/wormhole.png';
+        images.wormhole = document.createElement('img');
+        images.wormhole.src = './images/wormhole.png';
 
-        imageObjs.asteroid = document.createElement('img');
-        imageObjs.asteroid.src = './images/asteroid.png';
+        images.asteroid = document.createElement('img');
+        images.asteroid.src = './images/asteroid.png';
+
+        images.spaceship = document.createElement('img');
+        images.spaceship.src = './images/spaceship.png';
 
 
         var canvas = document.getElementById('gameCanvas');
         var ctx = canvas.getContext('2d');
-        var game = new Asteroids.Game(imageObjs);
-        var gameView = new Asteroids.GameView(game, ctx, imageObjs);
+        var game = new Asteroids.Game(images);
+        var gameView = new Asteroids.GameView(game, ctx, images);
         gameView.renderTitleScreen();
       })();
     </script>
