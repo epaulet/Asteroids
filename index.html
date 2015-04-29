@@ -3,8 +3,7 @@
     <title>Asteroids</title>
     <script src="./vendor/keymaster.js"></script>
     <script src="./vendor/howler.js"></script>
-    <script src="./lib/util.js"></script>
-    <script src="./lib/sounds.js"></script>
+    <script src="./lib/utils.js"></script>
     <script src="./lib/spaceObject.js"></script>
     <script src="./lib/spinningObject.js"></script>
     <script src="./lib/blackHole.js"></script>
@@ -19,6 +18,14 @@
   <body>
     <canvas id="gameCanvas" width="1000" height="600"
       style="display:block;margin:0 auto;"></canvas>
-    <script src="asteroids.js"></script>
+    <script>
+      (function () {
+        var canvas = document.getElementById('gameCanvas');
+        var ctx = canvas.getContext('2d');
+        var game = new Asteroids.Game();
+        var gameView = new Asteroids.GameView(game, ctx);
+        gameView.renderTitleScreen();
+      })();
+    </script>
   </body>
 </html>
