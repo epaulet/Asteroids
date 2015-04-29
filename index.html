@@ -1,7 +1,10 @@
 <html>
   <head>
     <title>Asteroids</title>
+    <script src="./vendor/keymaster.js"></script>
+    <script src="./vendor/howler.js"></script>
     <script src="./lib/util.js"></script>
+    <script src="./lib/sounds.js"></script>
     <script src="./lib/spaceObject.js"></script>
     <script src="./lib/spinningObject.js"></script>
     <script src="./lib/blackHole.js"></script>
@@ -12,43 +15,10 @@
     <script src="./lib/asteroid.js"></script>
     <script src="./lib/game.js"></script>
     <script src="./lib/gameView.js"></script>
-    <script src="./vendor/keymaster.js"></script>
   </head>
   <body>
     <canvas id="gameCanvas" width="1000" height="600"
       style="display:block;margin:0 auto;"></canvas>
-    <script type="text/javascript">
-      (function () {
-        images = {};
-
-        images.blackhole = document.createElement('img');
-        images.blackhole.src = './images/blackhole.png';
-
-        images.wormhole = document.createElement('img');
-        images.wormhole.src = './images/wormhole.png';
-
-        images.asteroid = document.createElement('img');
-        images.asteroid.src = './images/asteroid.png';
-
-        images.spaceship = document.createElement('img');
-        images.spaceship.src = './images/spaceship.png';
-
-        images.space = document.createElement('img');
-        images.space.src = './images/space.png';
-
-        images.arrowKeys = document.createElement('img');
-        images.arrowKeys.src = './images/arrow-keys.png';
-
-        images.spaceBar = document.createElement('img');
-        images.spaceBar.src = './images/space-bar.png';
-
-
-        var canvas = document.getElementById('gameCanvas');
-        var ctx = canvas.getContext('2d');
-        var game = new Asteroids.Game(images);
-        var gameView = new Asteroids.GameView(game, ctx, images);
-        gameView.renderTitleScreen();
-      })();
-    </script>
+    <script src="asteroids.js"></script>
   </body>
 </html>
