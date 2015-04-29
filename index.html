@@ -1,6 +1,7 @@
 <html>
   <head>
     <title>Asteroids</title>
+    <link rel="stylesheet" type="text/css" href="./css/asteroids.css">
     <script src="./vendor/keymaster.js"></script>
     <script src="./vendor/howler.js"></script>
     <script src="./lib/utils.js"></script>
@@ -16,14 +17,25 @@
     <script src="./lib/gameView.js"></script>
   </head>
   <body>
-    <canvas id="gameCanvas" width="1000" height="600"
-      style="display:block;margin:0 auto;"></canvas>
+    <div class="game-container">
+      <div class="score-sheet">
+        <div class="scoresheet">
+          Points: <span id="points">0</span>
+        </div>
+        <div class="scoresheet">
+          Level: <span id="level">1</span>
+        </div>
+      </div>
+      <canvas id="gameCanvas" width="1000" height="600"></canvas>
+    </div>
     <script>
       (function () {
         var canvas = document.getElementById('gameCanvas');
         var ctx = canvas.getContext('2d');
+        var pointDisplay = document.getElementById('points');
+        var levelDisplay = document.getElementById('level');
         var game = new Asteroids.Game();
-        var gameView = new Asteroids.GameView(game, ctx);
+        var gameView = new Asteroids.GameView(game, ctx, levelDisplay, pointDisplay);
         gameView.renderTitleScreen();
       })();
     </script>
