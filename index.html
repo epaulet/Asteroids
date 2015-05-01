@@ -20,10 +20,13 @@
     <div class="game-container">
       <div class="score-sheet">
         <div class="scoresheet">
-          Points: <span id="points">0</span>
+          Points: <span id="points"></span>
         </div>
         <div class="scoresheet">
-          Level: <span id="level">1</span>
+          Lives: <span id="lives"></span>
+        </div>
+        <div class="scoresheet">
+          Level: <span id="level"></span>
         </div>
       </div>
       <canvas id="gameCanvas" width="1000" height="600"></canvas>
@@ -32,10 +35,13 @@
       (function () {
         var canvas = document.getElementById('gameCanvas');
         var ctx = canvas.getContext('2d');
-        var pointDisplay = document.getElementById('points');
-        var levelDisplay = document.getElementById('level');
+        var scoresheet = {
+          points: document.getElementById('points'),
+          lives: document.getElementById('lives'),
+          level: document.getElementById('level')
+        };
         var game = new Asteroids.Game();
-        var gameView = new Asteroids.GameView(game, ctx, levelDisplay, pointDisplay);
+        var gameView = new Asteroids.GameView(game, ctx, scoresheet);
         gameView.renderTitleScreen();
       })();
     </script>
